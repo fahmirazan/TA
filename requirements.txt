@@ -5,3 +5,4 @@ keras
 streamlit_drawable_canvas
 firebase_admin
 datetime
+tensorflow
