@@ -1,6 +1,6 @@
 streamlit
 numpy
-PIL
+Pillow
 tensorflow
 tensorflow.keras.models
 streamlit_drawable_canvas
