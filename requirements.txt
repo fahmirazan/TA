@@ -1,0 +1,9 @@
+os
+streamlit
+numpy
+PIL
+tensorflow
+tensorflow.keras.models
+streamlit_drawable_canvas
+firebase_admin
+datetime
