@@ -115,6 +115,29 @@ def show_about_data():
     st.write("Data yang digunakan dalam aplikasi ini adalah dataset gambar bangun datar.")
     st.write("Dataset terdiri dari beberapa kategori bangun datar, yaitu jajargenjang, lingkaran, segiempat, segitiga, dan trapesium.")
     st.write("Setiap kategori memiliki beberapa sampel gambar untuk pelatihan dan pengujian model.")
+    
+    # Path ke folder "sampel"
+    folder_path = "sampel"
+    
+    # Daftar file gambar di folder "sampel"
+    image_files = os.listdir(folder_path)
+    
+    # Menghitung jumlah baris yang dibutuhkan
+    num_rows = (len(image_files) + 1) // 2
+    
+    # Menampilkan gambar-gambar ke dalam halaman dengan layout grid
+    for i in range(num_rows):
+        row_images = image_files[i*2 : (i+1)*2]  # Mengambil 2 gambar untuk setiap baris
+        
+        # Membuat baris dengan layout grid
+        cols = st.columns(2)
+        
+        # Menampilkan gambar dalam setiap kolom
+        for j, col in enumerate(cols):
+            if j < len(row_images):
+                image_path = os.path.join(folder_path, row_images[j])
+                image = Image.open(image_path)
+                col.image(image, caption=row_images[j], use_column_width=True)
 
 def main():
     
