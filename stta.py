@@ -89,6 +89,15 @@ def save_to_firebase(image_pil, model_name, class_name):
 
     return file_name, file_url
 
+# Fungsi untuk halaman Tentang Aplikasi
+def show_about_app():
+    st.title("Tentang Aplikasi")
+    st.write("Aplikasi ini merupakan sebuah sistem klasifikasi gambar untuk mengenali jenis-jenis bangun datar.")
+    st.write("Pengguna dapat menggambar bangun datar di area yang disediakan dan kemudian aplikasi akan melakukan klasifikasi menggunakan model yang telah dilatih sebelumnya.")
+    st.write("Hasil klasifikasi akan ditampilkan kepada pengguna berserta dengan model yang digunakan dan jenis bangun datar yang dipilih.")
+    st.write("Selain itu, pengguna juga dapat menyimpan gambar yang digambar ke Firebase Storage untuk keperluan pengujian dan pengembangan lebih lanjut.")
+
+
 # Fungsi untuk halaman Cara Penggunaan
 def show_usage():
     st.title("Cara Penggunaan")
@@ -108,18 +117,6 @@ def show_about_data():
     st.write("Setiap kategori memiliki beberapa sampel gambar untuk pelatihan dan pengujian model.")
 
 def main():
-    # Kontrol navigasi
-    pages = {
-        "Beranda": main,
-        "Cara Penggunaan": show_usage,
-        "Tentang Data": show_about_data
-    }
-
-    # Pilihan navigasi
-    selected_page = st.sidebar.selectbox("Navigasi", list(pages.keys()))
-
-    # Memanggil fungsi yang sesuai berdasarkan pilihan navigasi
-    pages[selected_page]()
     
     st.title("Aplikasi Klasifikasi Gambar Bangun Datar")
     st.write("Silakan menggambar gambar di bawah ini.")
@@ -177,5 +174,16 @@ def main():
         else:
             st.write("Canvas kosong, tidak ada gambar yang dihasilkan dari canvas.")
 
-if __name__ == "__main__":
-    main()
+# Kontrol navigasi
+pages = {
+    "Beranda": main,
+    "Tentang Aplikasi": show_about_app,
+    "Cara Penggunaan": show_usage,
+    "Tentang Data": show_about_data
+}
+
+# Pilihan navigasi
+selected_page = st.sidebar.selectbox("Navigasi", list(pages.keys()))
+
+# Memanggil fungsi yang sesuai berdasarkan pilihan navigasi
+pages[selected_page]()
