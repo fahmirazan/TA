@@ -92,11 +92,9 @@ def save_to_firebase(image_pil, model_name, class_name):
 # Fungsi untuk halaman Tentang Aplikasi
 def show_about_app():
     st.title("Tentang Aplikasi")
-    st.write("Aplikasi ini merupakan sebuah sistem klasifikasi gambar untuk mengenali jenis-jenis bangun datar.")
-    st.write("Pengguna dapat menggambar bangun datar di area yang disediakan dan kemudian aplikasi akan melakukan klasifikasi menggunakan model yang telah dilatih sebelumnya.")
-    st.write("Hasil klasifikasi akan ditampilkan kepada pengguna berserta dengan model yang digunakan dan jenis bangun datar yang dipilih.")
-    st.write("Selain itu, pengguna juga dapat menyimpan gambar yang digambar ke Firebase Storage untuk keperluan pengujian dan pengembangan lebih lanjut.")
-
+    st.write("Aplikasi ini merupakan sebuah sistem klasifikasi gambar untuk mengenali jenis-jenis bangun datar dengan memanfaatkan model machine learning yang telah dilatih sebelumnya untuk melakukan klasifikasi gambar bangun datar. Hal ini melibatkan pemahaman tentang prinsip-prinsip dasar machine learning, pemrosesan gambar, dan pemilihan model yang tepat.")
+    st.write("Pengguna dapat menggambar bangun datar di area yang disediakan dan kemudian aplikasi akan melakukan klasifikasi menggunakan model yang telah dilatih sebelumnya. Hasil klasifikasi akan ditampilkan kepada pengguna berserta dengan model yang digunakan dan jenis bangun datar yang dipilih. Selain itu, pengguna juga dapat menyimpan gambar yang digambar ke Firebase Storage untuk keperluan pengujian dan pengembangan lebih lanjut.")
+    st.write("Aplikasi ini dibangun oleh Fahmi Razan Ramdani (1301194054) untuk memenuhi proyek Tugas Akhir yang di dampingi oleh dosen pembimbing yaitu Dr. PUTU HARRY GUNAWAN, S.Si., M.Si., M.Sc. dan Dra. INDWIARTI, M.Si")
 
 # Fungsi untuk halaman Cara Penggunaan
 def show_usage():
@@ -113,8 +111,9 @@ def show_usage():
 def show_about_data():
     st.title("Tentang Data")
     st.write("Data yang digunakan dalam aplikasi ini adalah dataset gambar bangun datar.")
+    st.write("Jumlah dataset yang digunakan untuk membuat masing-masing model training berjumlah 1000 dataset dengan masing-masing kategori bangun datar 200 gambar")
     st.write("Dataset terdiri dari beberapa kategori bangun datar, yaitu jajargenjang, lingkaran, segiempat, segitiga, dan trapesium.")
-    st.write("Setiap kategori memiliki beberapa sampel gambar untuk pelatihan dan pengujian model.")
+    st.write("Setiap kategori memiliki beberapa sampel gambar untuk pelatihan dan pengujian model. Berikut beberapa sampel gambar yang telah diujikan sebelumnya terhadap model hasil training:")
     
     # Path ke folder "sampel"
     folder_path = "sampel"
