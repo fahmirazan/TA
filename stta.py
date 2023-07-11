@@ -18,24 +18,6 @@ else:
 
 bucket = storage.bucket(app=firebase_app)
 
-# Fungsi untuk halaman Cara Penggunaan
-def show_usage():
-    st.title("Cara Penggunaan")
-    st.write("Berikut adalah langkah-langkah penggunaan aplikasi ini:")
-
-    st.write("1. Pilih model yang ingin digunakan dari pilihan yang tersedia.")
-    st.write("2. Pilih jenis bangun datar yang akan diklasifikasikan.")
-    st.write("3. Gambarlah bangun datar di area yang disediakan.")
-    st.write("4. Klik tombol 'Klasifikasikan' untuk melihat hasil klasifikasi.")
-    st.write("5. Hasil klasifikasi akan ditampilkan di bawahnya.")
-
-# Fungsi untuk halaman Tentang Data
-def show_about_data():
-    st.title("Tentang Data")
-    st.write("Data yang digunakan dalam aplikasi ini adalah dataset gambar bangun datar.")
-    st.write("Dataset terdiri dari beberapa kategori bangun datar, yaitu jajargenjang, lingkaran, segiempat, segitiga, dan trapesium.")
-    st.write("Setiap kategori memiliki beberapa sampel gambar untuk pelatihan dan pengujian model.")
-
 # Daftar file model .h5
 model_files = {
     'Model 1 Adam': 'model1_adam.h5',
@@ -107,7 +89,32 @@ def save_to_firebase(image_pil, model_name, class_name):
 
     return file_name, file_url
 
+# Fungsi untuk halaman Cara Penggunaan
+def show_usage():
+    st.title("Cara Penggunaan")
+    st.write("Berikut adalah langkah-langkah penggunaan aplikasi ini:")
+
+    st.write("1. Pilih model yang ingin digunakan dari pilihan yang tersedia.")
+    st.write("2. Pilih jenis bangun datar yang akan diklasifikasikan.")
+    st.write("3. Gambarlah bangun datar di area yang disediakan.")
+    st.write("4. Klik tombol 'Klasifikasikan' untuk melihat hasil klasifikasi.")
+    st.write("5. Hasil klasifikasi akan ditampilkan di bawahnya.")
+
+# Fungsi untuk halaman Tentang Data
+def show_about_data():
+    st.title("Tentang Data")
+    st.write("Data yang digunakan dalam aplikasi ini adalah dataset gambar bangun datar.")
+    st.write("Dataset terdiri dari beberapa kategori bangun datar, yaitu jajargenjang, lingkaran, segiempat, segitiga, dan trapesium.")
+    st.write("Setiap kategori memiliki beberapa sampel gambar untuk pelatihan dan pengujian model.")
+
 def main():
+    # Kontrol navigasi
+    pages = {
+        "Beranda": main,
+        "Cara Penggunaan": show_usage,
+        "Tentang Data": show_about_data
+    }
+
     # Pilihan navigasi
     selected_page = st.sidebar.selectbox("Navigasi", list(pages.keys()))
 
@@ -169,13 +176,6 @@ def main():
 
         else:
             st.write("Canvas kosong, tidak ada gambar yang dihasilkan dari canvas.")
-
-# Kontrol navigasi
-pages = {
-    "Beranda": main,
-    "Cara Penggunaan": show_usage,
-    "Tentang Data": show_about_data
-}
 
 if __name__ == "__main__":
     main()
