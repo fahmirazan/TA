@@ -94,7 +94,7 @@ def show_about_app():
     st.title("Tentang Aplikasi")
     st.write("Aplikasi ini merupakan sebuah sistem klasifikasi gambar untuk mengenali jenis-jenis bangun datar dengan memanfaatkan model machine learning yang telah dilatih sebelumnya untuk melakukan klasifikasi gambar bangun datar. Hal ini melibatkan pemahaman tentang prinsip-prinsip dasar machine learning, pemrosesan gambar, dan pemilihan model yang tepat.")
     st.write("Pengguna dapat menggambar bangun datar di area yang disediakan dan kemudian aplikasi akan melakukan klasifikasi menggunakan model yang telah dilatih sebelumnya. Hasil klasifikasi akan ditampilkan kepada pengguna berserta dengan model yang digunakan dan jenis bangun datar yang dipilih. Selain itu, pengguna juga dapat menyimpan gambar yang digambar ke Firebase Storage untuk keperluan pengujian dan pengembangan lebih lanjut.")
-    st.write("Aplikasi ini dibangun oleh Fahmi Razan Ramdani (1301194054) untuk memenuhi proyek Tugas Akhir yang di dampingi oleh dosen pembimbing yaitu Dr. PUTU HARRY GUNAWAN, S.Si., M.Si., M.Sc. dan Dra. INDWIARTI, M.Si")
+    st.write("Aplikasi ini dibangun oleh Fahmi Razan Ramdani (1301194054) untuk memenuhi proyek Tugas Akhir yang di dampingi oleh dosen pembimbing yaitu Bapak Dr. PUTU HARRY GUNAWAN, S.Si., M.Si., M.Sc. dan Ibu Dra. INDWIARTI, M.Si")
 
 # Fungsi untuk halaman Cara Penggunaan
 def show_usage():
